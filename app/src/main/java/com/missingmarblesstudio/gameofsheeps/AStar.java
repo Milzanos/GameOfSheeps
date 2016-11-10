@@ -14,7 +14,6 @@ public class AStar {
     private static Node m_currentNode;
 
     private AStar() {
-
     }
 
     public static ArrayList<Point> CalculateRoute(int a_startX, int a_startY, int a_endX, int a_endY) {

@@ -45,6 +45,10 @@ public class Constants {
         NO_VALUE.FF_set = -1;
     }
 
+    public static Node[][] GET_GRID() {
+        return GRID;
+    }
+
     public static Node GET_NODE(Point a_position) {
         if (a_position.x >= 0 && a_position.x < COUNT_WIDTH &&
                 a_position.y >= 0 && a_position.y < COUNT_HEIGHT)

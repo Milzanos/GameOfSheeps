@@ -22,7 +22,7 @@ public class AIActionIdle extends AIAction {
     }
 
     @Override
-    public void Update() {
+    public void Update(float a_deltaTime) {
         ArrayList<AIPriority> priorities = m_agent.GetPriorities();
 
         AIPriority priority = null;

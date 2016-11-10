@@ -78,8 +78,8 @@ public class AIActionMoveTo extends AIAction {
     }
 
     @Override
-    public void Update() {
-        m_totalTime += Constants.DELTA_TIME;
+    public void Update(float a_deltaTime) {
+        m_totalTime += a_deltaTime;
         if (m_totalTime > 0.5f) {
             m_totalTime -= 0.5f;
 

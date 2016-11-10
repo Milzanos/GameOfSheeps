@@ -29,9 +29,9 @@ public class AIAgent {
         m_actions.add(new AIActionIdle(this));
     }
 
-    public void Update() {
+    public void Update(float a_deltaTime) {
         if (!m_actions.isEmpty()) {
-            m_actions.get(0).Update();
+            m_actions.get(0).Update(a_deltaTime);
 
             if (m_actions.get(0).IsDone()) {
                 m_actions.remove(m_actions.get(0));

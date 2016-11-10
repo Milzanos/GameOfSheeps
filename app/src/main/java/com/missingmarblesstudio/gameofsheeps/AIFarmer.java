@@ -34,12 +34,12 @@ public class AIFarmer extends AIAgent {
         AddPriority(priority);
 
         priority = new AIPriority("Waiting..");
-        priority.SetImportance(5);
+        priority.SetImportance(3);
         priority.AddAction(new AIActionDoAction(1.0f));
         AddPriority(priority);
 
         priority = new AIPriority("Random Movement.");
-        priority.SetImportance(2);
+        priority.SetImportance(5);
         priority.AddAction(new AIActionMoveTo(this));
         AddPriority(priority);
 

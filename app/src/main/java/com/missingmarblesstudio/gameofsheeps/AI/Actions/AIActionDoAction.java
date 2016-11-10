@@ -1,7 +1,6 @@
 package com.missingmarblesstudio.gameofsheeps.AI.Actions;
 
 import com.missingmarblesstudio.gameofsheeps.AI.AIWorld;
-import com.missingmarblesstudio.gameofsheeps.Constants;
 
 /**
  * Created by Vonck-PC on 08/11/2016.
@@ -45,8 +44,8 @@ public class AIActionDoAction extends AIAction {
     }
 
     @Override
-    public void Update() {
-        m_time += Constants.DELTA_TIME;
+    public void Update(float a_deltaTime) {
+        m_time += a_deltaTime;
 
         if (m_time >= m_totalTime)
             m_isDone = true;

@@ -15,7 +15,7 @@ public class AIAction {
 
     }
 
-    public void Update() {
+    public void Update(float a_deltaTime) {
 
     }
 

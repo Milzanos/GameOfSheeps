@@ -78,7 +78,7 @@ public class World {
         AIWorld.CalculateTotalCount();
         //Update all agents.
         for (AIFarmer it : m_farmers)
-            it.Update();
+            it.Update(Constants.DELTA_TIME);
     }
 
     public void OnTouch(Point a_point) {
