@@ -28,10 +28,10 @@ public class MainThread extends Thread {
     @Override
     public void run()
     {
-        long startTime  = 0;
-        long timeMillis = 0;
+        long startTime;
+        long timeMillis;
         long targetTime = 1000 / MAX_FPS;
-        long waitTime   = 0;
+        long waitTime;
         int  frameCount = 0;
         long totalTime  = 0;
 
@@ -45,7 +45,8 @@ public class MainThread extends Thread {
                 synchronized (m_surfaceHolder)
                 {
                     m_gamePanel.Update();
-                    m_gamePanel.draw(m_canvas);
+                    if (m_canvas != null)
+                        m_gamePanel.draw(m_canvas);
                 }
             }
             catch(Exception e)
@@ -69,7 +70,7 @@ public class MainThread extends Thread {
             {
                 if(waitTime > 0)
                 {
-                    this.sleep(waitTime);
+                    sleep(waitTime);
                 }
             }
             catch (Exception e)
@@ -79,6 +80,9 @@ public class MainThread extends Thread {
 
             totalTime += System.nanoTime() - startTime;
             frameCount++;
+
+            //Set delta time.
+            Constants.DELTA_TIME = (float) (System.nanoTime() - startTime) / 1000000000.0f;
 
             if(frameCount >= MAX_FPS)
             {
